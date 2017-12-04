@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping({"/user"})
+@RequestMapping({"/user/test"})
 public class UserControllerTest {
 
     private final UserDao userDao;
