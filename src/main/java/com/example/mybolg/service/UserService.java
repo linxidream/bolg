@@ -20,4 +20,9 @@ public class UserService {
     public List<User> getAll(){
         return userDao.findAll();
     }
+
+    public String userLogin(User user){
+        String token="";
+        return
+    }
 }

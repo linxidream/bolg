@@ -1,5 +1,7 @@
 package com.example.mybolg.common.result;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class ResultInfo {
 
     private String mark;
@@ -45,13 +47,21 @@ public class ResultInfo {
         resultInfo.setTip(ResultCode.SUCCESS_MSG_CN);
         resultInfo.setObj(obj);
     }
-    public static void setClientErrorInfo(ResultInfo resultInfo){
+    public static void setClientErrorInfo(ResultInfo resultInfo,String tip){
         resultInfo.setMark(ResultCode.CLIENT_ERROR);
-        resultInfo.setTip(ResultCode.CLIENT_ERROR_MSG_CN);
+        if(StringUtils.isBlank(tip)){
+            resultInfo.setTip(ResultCode.CLIENT_ERROR_MSG_CN);
+        }else{
+            resultInfo.setTip(tip);
+        }
     }
-    public static void setServerErrorInfo(ResultInfo resultInfo){
+    public static void setServerErrorInfo(ResultInfo resultInfo,String tip){
         resultInfo.setMark(ResultCode.SERVER_ERROR);
-        resultInfo.setTip(ResultCode.SERVER_ERROR_MSG_CN);
+        if(StringUtils.isBlank(tip)){
+            resultInfo.setTip(ResultCode.SERVER_ERROR_MSG_CN);
+        }else{
+            resultInfo.setTip(tip);
+        }
     }
     public static void setUnknowErrorInfo(ResultInfo resultInfo,String mark,String tip){
         resultInfo.setMark(mark);

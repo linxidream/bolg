@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .signin{
+            width:400px;
+            height:200px;
+            margin:200px auto;
+            background:#e2c9d2;
+            border-radius:10px 0 10px 0;
+            box-shadow: 0 12px 8px -9px #555;
+        }
+        .signin fieldset{
+            border:0;
+            padding:0 30px 0 30px;
+        }
+        .signin legend{
+            padding:20px 0 0 0;
+        }
+        .signin legend span {
+            font-family:Lato, helvetica, sans-serif;
+            font-weight:700;
+            font-size:1.3em;
+            line-height:1.1em;
+            color:#4eb8ea;
+            letter-spacing:-.05em;
+        }
+        .signin section {
+            overflow:hidden; /*包围控件和标注*/
+            padding:.25em 0; /*表单元素的间距*/
+        }
+        .signin section label {
+            font-family:"Source Sans Pro", helvetica, sans-serif;
+            font-weight:400;
+            float:left;
+            width:5em; /*标注栏的宽度*/
+            margin:.5em .3em 0 0; /*外边距保持文本与控件的间距*/
+            line-height:1.1;
+            color:#555;
+        }
+        .signin section input {
+            float:right;
+            width:10.5em; /*控件栏的宽度*/
+            margin:.2em 0 0 .5em;
+            padding:3px 10px 2px; /*输入文本与控件的间距*/
+            color:#555;
+            font-size:.8em;
+            outline:none; /*去掉默认的轮廓线*/
+            border-radius:10px 0 10px 0;
+        }
+        input:-webkit-autofill { color:#fff !important; } /*去掉 WebKit 默认的黄色背景*/
+        .signin section input[type=submit] {
+            float:right; /*将按钮与控件右边对齐*/
+            width:auto; /*重设按钮宽度*/
+            margin:0 2px 3px 0;
+            padding:0px 8px 3px;
+            font-size:1em;
+            font-weight:800;
+            color:#fff;
+            border:none;
+            background-color:#d6e636;
+            box-shadow:1px 1px 2px #888;
+        }
+        .signin section p{ /*内容为"not signed up?"*/
+            float:right;
+            clear:both;
+            margin:.2em 0 0;
+            text-align:right;
+            font-size:.8em;
+            line-height:1;
+            color:#555;
+        }
+        .signin section p a { color:#333; }/*到注册表单的链接*/
+        .signin section p a:hover {
+            color:#777;
+            text-decoration:none;
+        }
+        .signin section p.direction.error { /*错误消息*/
+            display:block;
+            color:#f00; /*添加 error 类后，把说明文字变成红色*/
+        }
+        .signin section p.direction { display:none; } /*隐藏错误消息*/
+
+    </style>
+</head>
+<body>
+    <section>
+        <form class="signin">
+            <fieldset>
+                <legend>
+                    <span>博客后台管理系统</span>
+                </legend>
+                <section>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="uname"/>
+                </section>
+                <section>
+                    <label for="password">Password:</label>
+                    <input type="text" id="password" name="psw" maxlength="20"/>
+                    <p class="passwordWrong">Wrong uesr or password</p>
+                </section>
+                <section>
+                    <input type="submit" value="sign"/>
+                    <p class="signup">Not sign up?
+                        <a>Resign new!</a>
+                    </p>
+                </section>
+            </fieldset>
+        </form>
+    </section>
+</body>
+</html>
