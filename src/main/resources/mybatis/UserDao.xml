@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.mybolg.dao.UserDao">
-
+    <resultMap id="AllColumnMap" type="com.example.mybolg.security.shiro.pojo.UserPojo">
+        <id property="user_id" column="user_id"/>
+        <result property="name" column="name"/>
+        <result property="password" column="password"/>
+        <result property="role" column="role"/>
+        <result property="state" column="state"/>
+        <result property="token" column="token"/>
+        <result property="role_name" column="role_name"/>
+        <result property="modules" column="role_module"/>
+    </resultMap>
+    <select id="findByUserName" parameterType="java.lang.String" resultType="com.example.mybolg.security.shiro.pojo.UserPojo">
+        select u.*,r.role_name,r.role_module from user u LEFT JOIN role r on u.role=r.id
+        where u.user_id=(select user_id from user where name = #{user_name})
+    </select>
 </mapper>
